@@ -4,11 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
     <title>portfolio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
+    <header>
+        <img src="image/NoteRing.svg" alt="ノートリング">
+    </header>
+    <div class="block">
+        <div class="note">
+            <div class="Nav">
+                <ul class="menu">
+                    <div class="menu-close">&times;</div>
+                    <li class="menu-global menu-top"><span class="menu-text">Home</span></li>
+                    <li class="menu-global menu-middle"><span class="menu-text">About Me</span></li>
+                    <li class="menu-global menu-bottom"><span class="menu-text">My Giraffes</span></li>
+                </ul>
+                <button class="Heart">
+                    <img src="image/Heart.svg" alt="Heart">
+                </button>
+            </div>
+            <div class="PortfolioLogo">
+                <img src="image/PortfolioLogo.svg" alt="Portfolio">
+                <p>想いを描く、心に響くデザインを。
+                </p>
+            </div>
+            <div class="scroll_down">
+                <img src="image/scroll.svg" alt="スクロールダウン"></img>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        var Menu = {
+            el: {
+                menu: $('.menu'),
+                menuTop: $('.menu-top'),
+                menuClose: $('.menu-close'),
+                menuMiddle: $('.menu-middle'),
+                menuBottom: $('.menu-bottom'),
+                menuText: $('.menu-text')
+            },
+
+            init: function () {
+                Menu.bindUIactions();
+            },
+
+            bindUIactions: function () {
+                Menu.el.menu.on('click', function (event) {
+                    Menu.activateMenu(event);
+                    event.preventDefault();
+                });
+            },
+
+            activateMenu: function () {
+                Menu.el.menuTop.toggleClass('menu-top-expand expand');
+                Menu.el.menuMiddle.toggleClass('menu-middle-expand expand');
+                Menu.el.menuBottom.toggleClass('menu-bottom-expand expand');
+                Menu.el.menuText.toggleClass('menu-text-expand');
+                Menu.el.menuClose.toggleClass('menu-close-visible');
+            }
+        };
+
+        //Stop menu item click closing the menu
+        $(".menu .menu-global").click(function (e) {
+            e.stopPropagation();
+        });
+
+        Menu.init();
+    </script>
 </body>
 
 </html>
