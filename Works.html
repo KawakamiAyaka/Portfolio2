@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/Profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
-    <title>Portfolio</title>
+    <title>Profile</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -23,42 +23,14 @@
                     <li class="menu-close">&times;</li>
                     <li class="menu-global menu-top"><a href="Profilr.html"><span class="menu-text">Profile</span></a>
                     </li>
-                    <li class="menu-global menu-middle"><a href="Works.html"></a><span class="menu-text">Works</span>
-                    </li>
+                    <li class="menu-global menu-middle"><a href="Works.html"><span class="menu-text">Works</span></li>
                     <li class="menu-global menu-bottom"><a href="Contact.html"></a><span
                             class="menu-text">Contact</span></li>
                 </ul>
-                <a href="#" class="Heart">
+                <a href="/index.html" class="Heart">
                     <img src="image/Heart.svg" alt="Heart">
                 </a>
             </nav>
-            <div class="PortfolioLogo">
-                <img src="image/PortfolioLogo.svg" alt="Portfolio">
-                <p>想いを描く、心に響くデザインを。</p>
-            </div>
-            <div class="scroll_down">
-                <img src="image/scroll.svg" alt="スクロールダウン">
-            </div>
-            <section id="profile">
-                <h2>Profile</h2>
-                <div class="PortfolioBox">
-                    <div class="Portfolio">
-                        <img src="image/MyPhoto.png" alt="川上采華の顔写真" width="200" height="200">
-                        <div>
-                            <div class="NameBox">
-                                <p>川上 采華<br><span>Kawakami Ayaka</span></p>
-                                <img src="image/nenndo.svg" alt="卒業年度26年" width="80">
-                            </div>
-                            <div class="TextBox">
-                                <p>ECCコンピュータ専門学校</p>
-                                <p>マルチメディア研究学科 / Webデザインコース</p>
-                                <p>2004年11月9日生まれ / 奈良県出身 / O型</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="Profilr.html" class="btn btn--yellow btn--cubic">詳しく見る</a>
-                </div>
-            </section>
             <section id="works">
                 <h2 class="TitleWorks">Works</h2>
                 <section class="carousel">
@@ -87,7 +59,8 @@
                 </div>
                 <ul class="SNSIcon">
                     <li><a href="https://x.com/kawa_chan1109"><img src="image/X_Logo.png" alt="Xのロゴ" width="50px"
-                                height="50px"></a></li>
+                                height="50px"></a>
+                    </li>
                     <li><a href="https://github.com/KawakamiAyaka"><img src="image/github_Logo.svg" alt="githubのロゴ"
                                 width="50px" height="50px"></a></li>
                 </ul>
@@ -98,7 +71,6 @@
             <p class="footer">kawakami&copy;2024</p>
         </div>
     </main>
-
     <script>
         $(document).ready(function () {
             // Menu 機能
@@ -211,6 +183,8 @@
             $('.carousel-control--prev').on('click', moveToPrevSlide);
         });
     </script>
+
+
 </body>
 
 </html>
