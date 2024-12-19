@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
-    <title>portfolio</title>
+    <title>Portfolio</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -16,67 +16,179 @@
     <header>
         <img src="image/NoteRing.svg" alt="ノートリング">
     </header>
-    <div class="block">
-        <div class="note">
-            <div class="Nav">
+    <main class="block">
+        <section class="note">
+            <nav class="Nav">
                 <ul class="menu">
-                    <div class="menu-close">&times;</div>
-                    <li class="menu-global menu-top"><span class="menu-text">Home</span></li>
-                    <li class="menu-global menu-middle"><span class="menu-text">About Me</span></li>
-                    <li class="menu-global menu-bottom"><span class="menu-text">My Giraffes</span></li>
+                    <li class="menu-close">&times;</li>
+                    <li class="menu-global menu-top"><span class="menu-text">Profile</span></li>
+                    <li class="menu-global menu-middle"><span class="menu-text">Works</span></li>
+                    <li class="menu-global menu-bottom"><span class="menu-text">Contact</span></li>
                 </ul>
-                <button class="Heart">
+                <a href="#" class="Heart">
                     <img src="image/Heart.svg" alt="Heart">
-                </button>
-            </div>
+                </a>
+            </nav>
             <div class="PortfolioLogo">
                 <img src="image/PortfolioLogo.svg" alt="Portfolio">
-                <p>想いを描く、心に響くデザインを。
-                </p>
+                <p>想いを描く、心に響くデザインを。</p>
             </div>
             <div class="scroll_down">
-                <img src="image/scroll.svg" alt="スクロールダウン"></img>
+                <img src="image/scroll.svg" alt="スクロールダウン">
             </div>
-        </div>
-    </div>
+            <section id="profile">
+                <h2>Profile</h2>
+                <div class="PortfolioBox">
+                    <div class="Portfolio">
+                        <img src="image/MyPhoto.png" alt="川上采華の顔写真" width="200" height="200">
+                        <div>
+                            <div class="NameBox">
+                                <p>川上 采華<br><span>Kawakami Ayaka</span></p>
+                                <img src="image/nenndo.svg" alt="卒業年度26年" width="80">
+                            </div>
+                            <div class="TextBox">
+                                <p>ECCコンピュータ専門学校</p>
+                                <p>マルチメディア研究学科 / Webデザインコース</p>
+                                <p>2004年11月9日生まれ / 奈良県出身 / O型</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn--yellow btn--cubic">詳しく見る</a>
+                </div>
+            </section>
+            <section id="works">
+                <h2 class="TitleWorks">Works</h2>
+                <section class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-item"><img src="image/Family_Connect.png" alt="FamilyConnectのサムネ"></div>
+                        <div class="carousel-item"><img src="image/Raitime.png" alt="Raitimeのサムネ"></div>
+                        <div class="carousel-item"><img src="image/Learnest.png" alt="Learnestのサムネ"></div>
+                        <div class="carousel-item"><img src="image/wkwktankentai.png" alt="わくわく探検隊のサムネ"></div>
+                    </div>
+                    <button class="carousel-control carousel-control--prev">&#9664;</button>
+                    <button class="carousel-control carousel-control--next">&#9654;</button>
+                    <div class="carousel-indicators">
+                        <button data-index="0" class="active"></button>
+                        <button data-index="1"></button>
+                        <button data-index="2"></button>
+                        <button data-index="3"></button>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
 
     <script>
-        var Menu = {
-            el: {
-                menu: $('.menu'),
-                menuTop: $('.menu-top'),
-                menuClose: $('.menu-close'),
-                menuMiddle: $('.menu-middle'),
-                menuBottom: $('.menu-bottom'),
-                menuText: $('.menu-text')
-            },
+        $(document).ready(function () {
+            // Menu 機能
+            const Menu = {
+                el: {
+                    menu: $('.menu'),
+                    menuTop: $('.menu-top'),
+                    menuClose: $('.menu-close'),
+                    menuMiddle: $('.menu-middle'),
+                    menuBottom: $('.menu-bottom'),
+                    menuText: $('.menu-text')
+                },
 
-            init: function () {
-                Menu.bindUIactions();
-            },
+                init() {
+                    this.bindUIActions();
+                },
 
-            bindUIactions: function () {
-                Menu.el.menu.on('click', function (event) {
-                    Menu.activateMenu(event);
-                    event.preventDefault();
+                bindUIActions() {
+                    this.el.menu.on('click', (event) => {
+                        this.toggleMenu(event);
+                        event.preventDefault();
+                    });
+
+                    // メニューアイテムのクリックを伝播させない
+                    $(".menu .menu-global").on('click', (e) => {
+                        e.stopPropagation();
+                    });
+                },
+
+                toggleMenu() {
+                    this.el.menuTop.toggleClass('menu-top-expand expand');
+                    this.el.menuMiddle.toggleClass('menu-middle-expand expand');
+                    this.el.menuBottom.toggleClass('menu-bottom-expand expand');
+                    this.el.menuText.toggleClass('menu-text-expand');
+                    this.el.menuClose.toggleClass('menu-close-visible');
+                }
+            };
+
+            Menu.init();
+
+            // Carousel 機能
+            const track = $('.carousel-track');
+            const slides = $('.carousel-item');
+            const indicators = $('.carousel-indicators button');
+            const slideWidth = slides.first().outerWidth();
+            const totalSlides = slides.length;
+            let currentIndex = 1; // 初期位置（クローンを考慮）
+
+            // クローンスライドを作成
+            const firstClone = slides.first().clone(true);
+            const lastClone = slides.last().clone(true);
+            track.append(firstClone);
+            track.prepend(lastClone);
+
+            // 初期位置を設定
+            track.css('transform', `translateX(-${slideWidth}px)`);
+
+            // カルーセルの状態を更新
+            function updateCarousel(index, instant = false) {
+                const transition = instant ? 'none' : 'transform 0.5s ease-in-out';
+                track.css({
+                    transform: `translateX(-${index * slideWidth}px)`,
+                    transition: transition,
                 });
-            },
 
-            activateMenu: function () {
-                Menu.el.menuTop.toggleClass('menu-top-expand expand');
-                Menu.el.menuMiddle.toggleClass('menu-middle-expand expand');
-                Menu.el.menuBottom.toggleClass('menu-bottom-expand expand');
-                Menu.el.menuText.toggleClass('menu-text-expand');
-                Menu.el.menuClose.toggleClass('menu-close-visible');
+                // インジケータの更新
+                indicators.removeClass('active');
+                const realIndex = (index === 0) ? totalSlides - 1 : (index === totalSlides + 1) ? 0 : index - 1;
+                indicators.eq(realIndex).addClass('active');
             }
-        };
 
-        //Stop menu item click closing the menu
-        $(".menu .menu-global").click(function (e) {
-            e.stopPropagation();
+            // 次のスライドに移動
+            function moveToNextSlide() {
+                currentIndex++;
+                updateCarousel(currentIndex);
+
+                if (currentIndex === totalSlides + 1) {
+                    setTimeout(() => {
+                        currentIndex = 1; // 1枚目にジャンプ
+                        updateCarousel(currentIndex, true);
+                    }, 500); // アニメーション後リセット
+                }
+            }
+
+            // 前のスライドに移動
+            function moveToPrevSlide() {
+                currentIndex--;
+                updateCarousel(currentIndex);
+
+                if (currentIndex === 0) {
+                    setTimeout(() => {
+                        currentIndex = totalSlides; // 最後のスライドにジャンプ
+                        updateCarousel(currentIndex, true);
+                    }, 500); // アニメーション後リセット
+                }
+            }
+
+            // インジケータのクリックイベント
+            indicators.on('click', function () {
+                const realIndex = $(this).data('index');
+                currentIndex = realIndex + 1; // クローン分を補正
+                updateCarousel(currentIndex);
+            });
+
+            // 自動再生
+            setInterval(moveToNextSlide, 3000);
+
+            // ボタン操作
+            $('.carousel-control--next').on('click', moveToNextSlide);
+            $('.carousel-control--prev').on('click', moveToPrevSlide);
         });
-
-        Menu.init();
     </script>
 </body>
 
