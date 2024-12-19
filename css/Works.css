@@ -163,123 +163,108 @@ body {
             }
         }
 
-
-        .PortfolioBox {
-            width: 80%;
-            border-radius: 30px;
-            padding: 80px 0;
-            box-shadow: 0 0 10px 0 #c7c7c7;
-            margin: auto;
-            background: #FFFBFA;
-
-            .Portfolio {
-                margin-bottom: 30px;
-                display: flex;
-                justify-content: center;
-                gap: 100px;
-
-                img {
-                    margin-top: 15px;
-                }
-
-                .NameBox {
-                    display: flex;
-                    gap: 50px;
-                    height: 100px;
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                    text-align: left;
-                    line-height: 1.8rem;
-
-                    span {
-                        font-size: 1.3rem;
-                    }
-                }
-
-                .TextBox {
-                    text-align: left;
-                    line-height: 1.3rem;
-                }
-            }
-
-        }
-
-        h2 {
-            width: 20%;
-            position: relative;
-            display: inline-block;
-            padding: 0 55px;
-            margin: 10px 0;
-
-            &:before,
-            &:after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                display: inline-block;
-                width: 45px;
-                height: 1px;
-                background-color: black;
-            }
-
-            &:before {
-                left: 0;
-            }
-
-            &:after {
-                right: 0;
-            }
-        }
-
-        .strong {
-            margin-top: 80px;
-        }
-
-        .strongTitle {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin: 8px;
-        }
-
-        .strongText {
-            span {
-                font-size: 1.5rem;
-                font-weight: 800;
-                color: #009FAD;
-                line-height: 1.5rem;
-            }
-        }
-
-        .Achievements {
+        .FamilyConnect {
             display: flex;
             justify-content: center;
-            gap: 100px;
 
-            .sinnjinn,
-            .doryoku {
-                display: flex;
-                flex-flow: column;
-                align-items: center;
-            }
+            .detail {
+                width: 500px;
+                text-align: left;
 
-            a.btn--yellow {
-                width: 100px;
-                padding: 0 50px;
-                border-radius: 10px;
-                color: #fff;
-                border: 2px solid #009FAD;
-                background-color: #009FAD;
-                text-decoration: none;
-                display: inline-block;
 
-                &:hover {
-                    color: #009FAD;
+                .name {
+                    font-size: 3rem;
+                    font-weight: 800;
+                    margin: -5px;
+                }
+
+                .text {
+                    width: 80%;
+                    text-align: left;
+                    margin-top: -30px;
+                }
+
+                .role {
+                    text-decoration: underline;
+                    margin-top: 40px;
+                }
+
+                .ToolsUsed {
+                    width: 400px;
+                    text-align: center;
+                    border: #009FAD solid 2px;
+                    color: #fff;
+                    background: #009FAD;
+                }
+
+                .tool {
+                    display: flex;
+                    justify-content: center;
+                    width: 400px;
+                    height: 100px;
                     background: #fff;
-                    border: 2px solid #009FAD;
-                    transition: all 0.3s;
+                    border: #009FAD solid 2px;
+
+                    .notion,
+                    .figma,
+                    .Illustrator,
+                    .VSCode {
+                        text-align: center;
+                        margin: 0 10px;
+
+                        p {
+                            margin-top: -35px;
+                        }
+                    }
                 }
             }
+
+            .other {
+                display: flex;
+                gap: 30px;
+
+                h2 {
+                    width: 70px;
+                    height: 40px;
+                    margin-top: -25px;
+                    padding: 1rem 2rem;
+                    line-height: 2.5rem;
+                    font-size: 1rem;
+                    color: #000000;
+                    background: rgb(255, 255, 255);
+                    border: #000 solid 2px;
+                    -webkit-box-shadow: 5px 5px 0 #009FAD;
+                    box-shadow: 5px 5px 0 #009FAD;
+                }
+            }
+
+            .mock-up {
+                margin-left: -80px;
+                margin-top: -20px;
+            }
         }
+
+        a.btn--yellow {
+            margin-top: -100px;
+            padding: 0 50px;
+            border-radius: 10px;
+            color: #fff;
+            border: 2px solid #009FAD;
+            background-color: #009FAD;
+            text-decoration: none;
+            display: inline-block;
+
+            &:hover {
+                color: #009FAD;
+                background: #fff;
+                border: 2px solid #009FAD;
+                transition: all 0.3s;
+            }
+        }
+
+
+
+
 
         .TitleWorks {
             margin: 120px 0 30px;
