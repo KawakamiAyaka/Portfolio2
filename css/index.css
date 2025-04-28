@@ -13,16 +13,16 @@ body {
 
     .block {
         width: 100%;
-        height: 2550px;
+        /* height: 2550px; */
         margin-top: -51px;
         position: absolute;
         border-radius: 30px 30px 0 0;
         border: 1px solid #ccc;
-        padding: 100px 0 50px 0;
+        padding: 100px 0 0 0;
 
         .note {
             width: 90%;
-            height: 2550px;
+            /* height: 4000px; */
             margin: auto;
             text-align: center;
             line-height: 3;
@@ -181,6 +181,7 @@ body {
 
         .scroll_down {
             display: flex;
+            margin-bottom: 100px;
             justify-content: center;
         }
 
@@ -189,7 +190,6 @@ body {
             position: relative;
             display: inline-block;
             padding: 0 55px;
-            margin: 155px 0 20px 0;
 
             &:before,
             &:after {
@@ -212,9 +212,9 @@ body {
         }
 
         .PortfolioBox {
-            width: 80%;
+            width: 85%;
             border-radius: 30px;
-            padding: 80px 0;
+            padding: 90px 0;
             box-shadow: 0 0 10px 0 #c7c7c7;
             margin: auto;
             background: #FFFBFA;
@@ -263,6 +263,83 @@ body {
                     background: #fff;
                     border: 2px solid #009FAD;
                     transition: all 0.3s;
+                }
+            }
+
+            h2 {
+                width: 20%;
+                position: relative;
+                display: inline-block;
+                padding: 0 55px;
+                margin: 10px 0;
+
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    display: inline-block;
+                    width: 45px;
+                    height: 1px;
+                    background-color: black;
+                }
+
+                &:before {
+                    left: 0;
+                }
+
+                &:after {
+                    right: 0;
+                }
+            }
+
+            .strong {
+                margin-top: 80px;
+            }
+
+            .strongTitle {
+                font-size: 1.8rem;
+                font-weight: 800;
+                margin: 8px;
+            }
+
+            .strongText {
+                span {
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: #009FAD;
+                    line-height: 1.5rem;
+                }
+            }
+
+            .Achievements {
+                display: flex;
+                justify-content: center;
+                gap: 100px;
+
+                .sinnjinn,
+                .doryoku {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                }
+
+                a.btn--yellow {
+                    width: 100px;
+                    padding: 0 50px;
+                    border-radius: 10px;
+                    color: #fff;
+                    border: 2px solid #009FAD;
+                    background-color: #009FAD;
+                    text-decoration: none;
+                    display: inline-block;
+
+                    &:hover {
+                        color: #009FAD;
+                        background: #fff;
+                        border: 2px solid #009FAD;
+                        transition: all 0.3s;
+                    }
                 }
             }
         }
@@ -409,12 +486,13 @@ body {
     }
 
     .footer {
-        width: 99%;
+        width: 100%;
         height: 50px;
         background: #009FAD;
         color: #fff;
         text-align: center;
         padding: 10px;
+        margin: 0;
     }
 }
 
@@ -832,7 +910,7 @@ body {
             .Ty {
                 font-size: 3.5rem;
                 font-weight: 800;
-                color: #e8e8e8;
+                color: #959595;
             }
         }
 
