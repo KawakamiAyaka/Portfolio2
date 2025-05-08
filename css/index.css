@@ -451,12 +451,12 @@ body {
 
         h3 {
             position: relative;
-            width: 250px;
+            /* width: 250px; */
             margin-bottom: 30px;
             background: #deedee;
             box-shadow: 0px 0px 0px 5px #deedee;
             border: dashed 2px white;
-            padding: 0.2em 0.5em;
+            padding: 0.2em 1em;
             color: #454545;
         }
 
@@ -880,7 +880,7 @@ body {
 
             h3 {
                 position: relative;
-                width: 250px;
+                width: 300px;
                 margin-bottom: 30px;
                 background: #deedee;
                 box-shadow: 0px 0px 0px 5px #deedee;
