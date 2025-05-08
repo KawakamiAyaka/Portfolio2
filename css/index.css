@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     background: #FFFFFF;
-    font-family: "Zen Maru Gothic", serif;
+    color: #3d3d3d;
+    /* font-family: "Zen Maru Gothic", serif; */
 
     header {
         text-align: center;
