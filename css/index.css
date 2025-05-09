@@ -27,7 +27,7 @@ body {
             margin: auto;
             text-align: center;
             line-height: 3;
-            background-image: linear-gradient(#ccc 1px, transparent 1px);
+            background-image: linear-gradient(#dfdede 1px, transparent 1px);
             background-size: 100% 3em;
             padding-bottom: 1px;
         }
