@@ -239,7 +239,7 @@ body {
                     padding: 1rem 2rem;
                     line-height: 2.5rem;
                     font-size: 1rem;
-                    color: #000000;
+                    font-weight: bold;
                     background: rgb(255, 255, 255);
                     border: #606060 solid 2px;
                     -webkit-box-shadow: 5px 5px 0 #009FAD;
@@ -265,13 +265,15 @@ body {
 
         a.btn--yellow {
             margin-top: -100px;
-            padding: 0 50px;
+            padding: 0 30px;
+            margin: 0 20px;
             border-radius: 10px;
             color: #fff;
             border: 2px solid #009FAD;
             background-color: #009FAD;
             text-decoration: none;
             display: inline-block;
+            font-weight: bold;
 
             &:hover {
                 color: #009FAD;
